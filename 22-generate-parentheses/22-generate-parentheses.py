@@ -1,12 +1,7 @@
-class Solution(object):
-    def generateParenthesis(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
-        stack =[]
-        res=[]
-        
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        stack = []
+        res = []
         
         def backtrack(open,closed):
             if open == closed == n:
@@ -21,7 +16,5 @@ class Solution(object):
                 stack.append("(")
                 backtrack(open+1,closed)
                 stack.pop()
-        
         backtrack(0,0)
         return res
-        
