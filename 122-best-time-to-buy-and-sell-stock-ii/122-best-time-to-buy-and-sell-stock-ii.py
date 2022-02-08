@@ -1,16 +1,14 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        """
-        Loop through array 
-        if the current number < next number 
-        subtract
-        and add all subtractions
-        """
-        sub = 0
-        for i in range(1,len(prices)):
-            if prices[i] > prices[i-1]:
-                # print (prices[i],prices[i-1])
-                sub += (prices[i] - prices[i-1])
-        return sub
-                
-            
+        # 7,1,5,3,6,4
+        # 5-1 =4
+        # 3-6=3
+        # max =7
+        
+        maxP = 0
+        for i in range(len(prices)-1):
+            if prices[i] < prices[i+1]:
+                maxP += (prices[i+1]-prices[i])
+        return maxP
+          
+        
