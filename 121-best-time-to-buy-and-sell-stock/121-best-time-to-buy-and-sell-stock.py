@@ -3,10 +3,10 @@ class Solution:
         mtn = prices[0]
         bp = 0
         
-        for i in range(len(prices)):
-            if bp < prices[i]-mtn:
-                bp = prices[i]-mtn
+        for i in range(len(prices)) :
             if mtn > prices[i]:
                 mtn = prices[i]
-        
+            if bp <prices[i] - mtn:
+                bp = prices[i] - mtn
+
         return bp
